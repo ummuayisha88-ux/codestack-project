@@ -1,0 +1,23 @@
+.create-course-section {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #e8eaed, #c4cbd9);
+    display: flex;
+    align-items: center;
+}
+
+.course-card {
+    width: 100%;
+    max-width: 500px;
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0px 10px 30px rgba(0,0,0,0.2);
+}
+
+.course-card h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+

@@ -1,0 +1,48 @@
+h2 {
+    text-align: center;
+    margin-top: 40px;
+    font-size: 28px;
+    font-weight: bold;
+    color: #333;
+}
+
+
+h2::after {
+    content: "";
+    display: block;
+    width: 60px;
+    height: 3px;
+    background: #2563eb;
+    margin: 10px auto;
+    border-radius: 2px;}
+
+.course-desc {
+    display: -webkit-box;
+    display: box;                  
+
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+    line-height: 1.5;
+    max-height: 3em;              
+}
+.course-link {
+    text-decoration: none;
+    color: inherit;
+}
+
+.course-card {
+    border-radius: 12px;
+    padding: 15px;
+    background: white;
+    transition: 0.3s;
+}
+
+.course-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+ 

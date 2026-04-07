@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<h2 class="mb-4">🎥 Live Classes</h2>
+
+<div class="row">
+
+{% for c in classes %}
+<div class="col-md-6">
+
+    <div class="card live-card p-4 mb-4">
+
+        <h5 class="mb-2">{{ c.title }}</h5>
+
+        <p class="live-info">
+            📅 {{ c.date }} &nbsp; | &nbsp; ⏰ {{ c.time }}
+        </p>
+
+        <a href="{{ c.meet_link }}" target="_blank" class="btn join-btn">
+            🔴 Join Class
+        </a>
+
+    </div>
+
+</div>
+{% empty %}
+<p>No live classes scheduled</p>
+{% endfor %}
+
+</div>
+
+{% endblock %}

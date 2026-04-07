@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<h2 class="mb-4">Assignments</h2>
+
+{% for a in assignments %}
+<div class="card assignment-card p-3 mb-4 shadow-sm">
+
+    <h5>{{ a.title }}</h5>
+    <p>{{ a.question }}</p>
+    <small class="text-danger">Due: {{ a.due_date }}</small>
+
+    
+    {% if a.id in submitted_ids %}
+        <p class="text-success mt-2">✔ Submitted</p>
+    {% else %}
+
+    
+    <form method="POST" enctype="multipart/form-data" class="mt-2">
+        {% csrf_token %}
+        <input type="hidden" name="assignment_id" value="{{ a.id }}">
+        <input type="file" name="file" required>
+        <button class="btn btn-primary btn-sm mt-2">Submit</button>
+    </form>
+
+    {% endif %}
+
+</div>
+{% empty %}
+<p>No assignments available</p>
+{% endfor %}
+
+{% endblock %}

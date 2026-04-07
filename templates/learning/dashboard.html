@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<h2 class="mb-4">{{ course.title }} - Learning Dashboard</h2>
+
+<div class="row g-4">
+
+    
+    <div class="col-md-4">
+        <a href="{% url 'notes' course_id=course.id %}" class="text-decoration-none">
+
+
+            <div class="card learning-card shadow-sm">
+                <div class="card-body">
+                    <h5>📁 Notes</h5>
+                    <p class="text-muted">Download study materials</p>
+                </div>
+            </div>
+        </a>
+    </div>
+
+    
+    <div class="col-md-4">
+        <a href="{% url 'assignments' course_id=course.id %}" class="text-decoration-none">
+            <div class="card learning-card shadow-sm">
+                <div class="card-body">
+                    <h5>📝 Assignments</h5>
+                    <p class="text-muted">Submit your work</p>
+                </div>
+            </div>
+        </a>
+    </div>
+
+    
+    <div class="col-md-4">
+        <a href="{% url 'live_classes' course_id=course.id %}" class="text-decoration-none">
+            <div class="card learning-card shadow-sm">
+                <div class="card-body">
+                    <h5>🎥 Live Classes</h5>
+                    <p class="text-muted">Join online sessions</p>
+                </div>
+            </div>
+        </a>
+    </div>
+
+</div>
+
+{% endblock %}

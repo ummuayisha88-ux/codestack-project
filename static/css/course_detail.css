@@ -1,0 +1,23 @@
+.course-detail {
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+/* IMAGE */
+.course-detail img {
+    height: 300px;
+    object-fit: cover;
+}
+
+/* TITLE */
+.course-detail h2 {
+    font-weight: bold;
+}
+
+/* BUTTON */
+.course-detail .btn {
+    font-size: 16px;
+    padding: 10px;
+}

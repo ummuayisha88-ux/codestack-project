@@ -1,0 +1,66 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<h2 class="dashboard-title">📊 Dashboard Overview</h2>
+<p>Welcome, {{ request.user.username }} 👋</p>
+
+<div class="row g-4 mt-3">
+
+    
+    <div class="col-md-4">
+        <a href="/admin/accounts/useraccount/" class="dash-link">
+            <div class="dash-card users">
+                <div class="dash-icon">👥</div>
+                <h6>Total Users</h6>
+                <h2>{{ users }}</h2>
+            </div>
+        </a>
+    </div>
+
+    
+    <div class="col-md-4">
+        <a href="{% url 'course_list' %}" class="dash-link">
+            <div class="dash-card courses">
+                <div class="dash-icon">📚</div>
+                <h6>Total Courses</h6>
+                <h2>{{ courses }}</h2>
+            </div>
+        </a>
+    </div>
+
+    
+    <div class="col-md-4">
+        <a href="/admin/enrollments/enrollment/" class="dash-link">
+            <div class="dash-card enrollments">
+                <div class="dash-icon">🎓</div>
+                <h6>Enrollments</h6>
+                <h2>{{ enrollments }}</h2>
+            </div>
+        </a>
+    </div>
+
+    
+    <div class="col-md-4">
+        <a href="/admin/learning/assignment/" class="dash-link">
+            <div class="dash-card assignments">
+                <div class="dash-icon">📝</div>
+                <h6>Assignments</h6>
+                <h2>{{ assignments }}</h2>
+            </div>
+        </a>
+    </div>
+
+    
+    <div class="col-md-4">
+        <a href="/admin/payments/payment" class="dash-link">
+            <div class="dash-card payments">
+                <div class="dash-icon">💳</div>
+                <h6>Payments</h6>
+                <h2>{{ payments }}</h2>
+            </div>
+        </a>
+    </div>
+
+</div>
+
+{% endblock %}

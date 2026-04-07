@@ -1,0 +1,97 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+<div class="hero">
+
+    <div class="container-fluid">
+    <div class="row align-items-center">
+
+
+
+        
+        <div class="col-md-6 ps-5">
+        <p class="hero-tag text-uppercase">Welcome to CodeStack</p>
+        <h1 class="fw-bold">Build Your Coding Stack</h1>
+        <p class="lead">Upgrade your skills with expert-led courses</p>
+
+        <a href="/accounts/register/" class="btn btn-primary me-2">Get Started</a>
+        <a href="{% url  'course_list' %}" class="btn btn-outline-light">
+        Browse Courses</a>
+                                                                              
+        </div>
+
+    
+       <div class="col-md-6 text-center mt-4 mt-md-0">
+        <img src="/media/homepage1.jpg" class="hero-img">
+       </div>
+    </div>
+    </div>
+</div>
+    
+
+
+<div class="container mt-5">
+
+    <h2 class="text-center mb-4">Popular Courses</h2>
+    
+
+    <div class="row g-4">
+        
+        {% for c in courses %}
+<div class="col-lg-3 col-md-4 col-sm-6">
+
+    <div class="card shadow-sm w-100">
+
+        
+        {% if c.image %}
+       <img src="{{ c.image.url }}" class="course-img">
+       {% else %}
+       <img src="{% static 'images/default.jpg' %}" class="course-img">
+        {% endif %}
+
+        <div class="card-body">
+            <h6>{{ c.title }}</h6>
+            <p class="small">{{ c.description|truncatewords:5 }}</p>
+
+            <a href="{% url 'course_details' c.id %}" class="btn btn-sm btn-primary mt-auto">
+                Join Now
+            </a>
+        </div>
+
+    </div>
+
+</div>
+{% endfor %}
+       
+    </div>
+
+</div>
+
+
+<div class="container mt-5 mb-5">
+
+    <div class="row text-center">
+
+        <div class="col-md-4">
+            <h5>👨‍🏫 Expert Instructors</h5>
+            <p>Learn from industry professionals</p>
+        </div>
+
+        <div class="col-md-4">
+            <h5>📂 Real Projects</h5>
+            <p>Hands-on practical experience</p>
+        </div>
+
+        <div class="col-md-4">
+            <h5>🎓 Certification</h5>
+            <p>Get certified after completion</p>
+        </div>
+
+    </div>
+
+</div>
+
+{% endblock %}
+
